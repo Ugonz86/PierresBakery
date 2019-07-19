@@ -1,20 +1,34 @@
 using System;
+using System.Collections.Generic;
 namespace PierresBakery.Models
 {
-  class Invoice
+  class Bread
   {
-    public static void Total(int bread, int pastry)
+    private int _bPrice;
+    public Bread(int bPrice)
+    {
+      _bPrice = bPrice;
+    }
+    public static int BreadInvoice(int breadNo)
     {
       int total=0;
-      if (bread!=0)
-      {
-        total = total + (bread*5);
-      }
-        if (pastry!=0)
-        {
-          total = total + (pastry*2);
-        }
-        Console.WriteLine("Your total is: " + total);
+      total= total + (breadNo*5);
+      return total;
+    }
+  }
+
+  class Pastry
+  {
+    private int _pPrice;
+    public Pastry(int pPrice)
+    {
+      _pPrice = pPrice;
+    }
+    public static int PastryInvoice(int pastryNo)
+    {
+      int total=0;
+      total= total + (pastryNo*2);
+      return total;
     }
   }
 }
