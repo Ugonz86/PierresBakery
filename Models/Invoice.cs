@@ -4,10 +4,17 @@ namespace PierresBakery.Models
 {
   class Bread
   {
+    private string _bName;
     private int _bPrice;
-    public Bread(int bPrice)
+
+    public Bread(string bName, int bPrice)
     {
+      _bName = bName;
       _bPrice = bPrice;
+    }
+    public string breadKind()
+    {
+      return _bName;
     }
     public static int BreadInvoice(int breadNo)
     {
@@ -16,13 +23,19 @@ namespace PierresBakery.Models
       return total;
     }
   }
-
   class Pastry
   {
+    private string _pName;
     private int _pPrice;
-    public Pastry(int pPrice)
+
+    public Pastry(string pName, int pPrice)
     {
+      _pName = pName;
       _pPrice = pPrice;
+    }
+    public string pastryKind()
+    {
+      return _pName;
     }
     public static int PastryInvoice(int pastryNo)
     {
