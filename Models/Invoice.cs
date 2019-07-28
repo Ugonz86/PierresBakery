@@ -4,44 +4,30 @@ namespace PierresBakery.Models
 {
   class Bread
   {
-    private string _bName;
-    private int _bPrice;
+    // public string Name { get; set;}
+    public int Price { get; set; }
 
-    public Bread(string bName, int bPrice)
+    public Bread()
     {
-      _bName = bName;
-      _bPrice = bPrice;
+      Price = 0;
     }
-    public string breadKind()
+    public void BreadInvoice(int breadNo)
     {
-      return _bName;
-    }
-    public static int BreadInvoice(int breadNo)
-    {
-      int total=0;
-      total= total + (breadNo*5);
-      return total;
+      Price = breadNo * 5 - 5 * (breadNo/3);
     }
   }
   class Pastry
   {
-    private string _pName;
-    private int _pPrice;
 
-    public Pastry(string pName, int pPrice)
+    public int Price { get; set; }
+
+    public Pastry()
     {
-      _pName = pName;
-      _pPrice = pPrice;
+      Price = 0;
     }
-    public string pastryKind()
+    public void PastryInvoice(int pastryNo)
     {
-      return _pName;
-    }
-    public static int PastryInvoice(int pastryNo)
-    {
-      int total=0;
-      total= total + (pastryNo*2);
-      return total;
+      Price = pastryNo * 2 - 1 * (pastryNo/3);
     }
   }
 }
