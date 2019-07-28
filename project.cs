@@ -7,6 +7,9 @@ namespace PierresBakery
   {
     public static void Main()
     {
+      Bread bread = new Bread();
+      Pastry pastry = new Pastry();
+
       Console.WriteLine("Welcome to Pierres Bakery!");
       Console.WriteLine("Prices: Bread $5 and Pastry $2 (Each one)");
       Console.WriteLine("Would you like to buy bread? Enter Y for yes");
@@ -18,7 +21,6 @@ namespace PierresBakery
           // Bread bread1 = new Bread("Garlic");
           // Bread bread2 = new Bread("Italian Herbs");
           // Bread bread3 = new Bread("Whole Wheat");
-          Bread bread = new Bread();
           // List<Bread> BreadList = new List<Bread>{bread1, bread2, bread3};
           // int i = 1;
           // foreach(Bread breadGroup in BreadList)
@@ -45,7 +47,7 @@ namespace PierresBakery
             //   bread3.BreadInvoice(breadNo);
             // }
 
-              Console.WriteLine("Bread loaf quantity: " + breadNo + " your total is: " + bread.Price + "$");
+              Console.WriteLine("Bread loaf quantity: " + breadNo + " Your bread total is: " + bread.Price + "$");
           }
         }
         else
@@ -63,7 +65,6 @@ namespace PierresBakery
           //   Pastry pastry1 = new Pastry("Tiramisu", 2);
           //   Pastry pastry2 = new Pastry("Matcha Cake", 2);
           //   Pastry pastry3 = new Pastry("Macaron", 2);
-            Pastry pastry = new Pastry();
           //   List<Pastry> PastryList = new List<Pastry>{ pastry1, pastry2, pastry3 };
           //   foreach(Pastry PastryGroup in PastryList)
             // {
@@ -73,7 +74,7 @@ namespace PierresBakery
             // string pastryType = Console.ReadLine();
 
             Console.WriteLine("Enter the # of pastries you want buy: ");
-            int pastryNo= int.Parse(Console.ReadLine());
+            int pastryNo = int.Parse(Console.ReadLine());
             if (pastryNo!= 0)
             {
               pastry.PastryInvoice(pastryNo);
@@ -82,10 +83,11 @@ namespace PierresBakery
             //   {
             //     Console.WriteLine("You get the 3 for $5 deal!");
             //   }
-                Console.WriteLine("Pastry quantity: " + pastryNo + " your total is:" + pastry.Price + "$");
+                Console.WriteLine("Pastry quantity: " + pastryNo + " Your pastry total is:" + pastry.Price + "$");
             }
         }
-
+        int finalTotal = bread.Price + pastry.Price;
+        Console.WriteLine("You entire purchase total is: " + finalTotal + "$ ");
         Console.WriteLine("Thank you for buying at Pierres Bakery! Come back soon!");
         // Console.WriteLine("Your total is" + breadBuy + pastryBuy + "$");
     }
